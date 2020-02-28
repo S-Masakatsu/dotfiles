@@ -27,11 +27,16 @@ alias cdr='cd-gitroot'
 alias nvp='navi --print'
 
 ### ls
-alias l='ls -CF'
-alias ls='ls -G'
-alias ll='ls -lG'
-alias la='ls -laG'
-alias lt='ls -lartG'
+# alias l='ls -CF'
+# alias ls='ls -G'
+# alias ll='ls -lG'
+# alias la='ls -laG'
+# alias lt='ls -lartG'
+alias ls='exa'
+alias la='exa -abghHliS'
+alias ll='exa --long --grid'
+alias lg='exa -hla --git'
+alias lt='exa --long --tree'
 
 ### Dotfiles
 alias vz='vim ~/.zshrc'
@@ -88,6 +93,7 @@ alias drmimgf='docker rmi -f `docker images -aq`'
 alias ni='npm install'
 alias nu='npm uninstall'
 alias nr='npm run'
+alias ns='npm start'
 
 ### yarn
 alias ya='yarn add'
@@ -95,5 +101,8 @@ alias yr='yarn remove'
 alias yi='yarn install'
 
 ### lazy
-alias lg='lazygit'
+alias lzg='lazygit'
 alias lzd='lazydocker'
+
+### Python3
+alias p3='python3'
