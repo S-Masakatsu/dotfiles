@@ -2,6 +2,12 @@
 # Alias
 # ------------------------------------------------------
 
+### Shell restart
+alias relogin='exec $SHELL -l'
+
+### backUp
+alias backup='tar cfvz backup.tar.gz --exclude node_modules ${HOME}/Desktop/*'
+
 ### Global
 alias -g A='| awk'
 alias -g C='| pbcopy' # copy
@@ -18,13 +24,16 @@ alias tree="pwd;find . | sort | sed '1d;s/^\.//;s/\/\([^/]*\)$/|--\1/;s/\/[^/|]*
 alias c='clear'
 alias mv='mv -i'
 alias cp='cp -i'
-alias vim='nvim'
+alias vim='vim'
 alias vi='vim'
 alias v='vim'
 alias op='open'
 alias sshk='ssh-keygen -t rsa'
 alias cdr='cd-gitroot'
 alias nvp='navi --print'
+
+### cat
+alias cat='bat'
 
 ### ls
 # alias l='ls -CF'
@@ -37,6 +46,7 @@ alias la='exa -abghHliS'
 alias ll='exa --long --grid'
 alias lg='exa -hla --git'
 alias lt='exa --long --tree'
+alias lgt='exa --long --tree -hla --git --git-ignore'
 
 ### Dotfiles
 alias vz='vim ~/.zshrc'
@@ -78,16 +88,35 @@ alias dh='docker history'
 alias dn='docekr network'
 alias dv='docker volume'
 alias drm='docker rm $(docker ps -aq)'
+alias ds='docker stop $(docker ps -q)'
 alias drmimg='docker rmi `docker images -aq`'
 alias drmimgf='docker rmi -f `docker images -aq`'
 
+### docker-compose
+alias dcom='docker-compose'
+alias dcomu='docker-compose up'
+alias dcomb='docker-compose up --build'
+alias dcomr='docker-compose run'
+alias docms='docker-compose stop'
+alias dcomd='docker-compose down'
+alias dcomdv='docker-compose down -v'
+
 ### Kubernetes
-# alias k='kubectl'
-# alias ka='kubectl apply -f'
-# alias kl='kubectl logs -f'
-# alias kp='kubectl proxy'
-# alias kg='kubectl get'
-# alias krm='kubectl delete'
+alias k='kubectl'
+alias ka='kubectl apply -f'
+alias kl='kubectl logs -f'
+alias kp='kubectl proxy'
+alias kg='kubectl get'
+alias krm='kubectl delete'
+
+### kubectx
+alias kc='kubectx'
+
+### kubesec
+alias ks='kubesec'
+
+### helm
+alias helmdels='helm ls --all --short | xargs -L1 helm delete'
 
 ### npm
 alias ni='npm install'
