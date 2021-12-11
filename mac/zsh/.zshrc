@@ -1,3 +1,21 @@
+# Golang
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
+export GOPRIVATE="github.com/NetDreamers/*"
+# goenv
+export PATH="$HOME/.goenv/bin:$PATH"
+eval "$(goenv init -)"
+
+# Python3
+export PATH=/usr/local/opt/python/libexec/bin:/Users/{user}/.nodebrew/current/bin:$PATH
+
+setopt +o nomatch 
+
+eval "$(gh completion -s zsh)"
+eval "$(direnv hook zsh)"
+
+
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
