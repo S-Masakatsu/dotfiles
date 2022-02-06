@@ -1,13 +1,13 @@
-# ------------------------------------------------------
-# Plugin
-# ------------------------------------------------------
+########################################################
+# Plugin setup
+########################################################
 # zplugが無ければインストール
-if [[ ! -d ~/.zplug ]];then
-  git clone https://github.com/zplug/zplug ~/.zplug
+if [[ ! -d $HOME/.zplug ]];then
+	git clone https://github.com/zplug/zplug $HOME/.zplug
 fi
 
 # zplugを有効化する
-source ~/.zplug/init.zsh
+source $HOME/.zplug/init.zsh
 
 # プラグインList
 zplug "adrieanKhisbe/diractions"
@@ -23,10 +23,10 @@ zplug "zsh-users/zsh-history-substring-search", defer:3
 
 # インストールしていないプラグインをインストール
 if ! zplug check --verbose; then
-  printf "Install? [y/N]: "
-  if read -q; then
-      echo; zplug install
-  fi
+	printf "Install? [y/N]: "
+	if read -q; then
+		echo; zplug install
+	fi
 fi
 
 # コマンドをリンクして、PATH に追加し、プラグインは読み込む
